@@ -1,27 +1,25 @@
-function Add(id)
+var name = "";
+var phone = "";
+
+function Add()
 {
   try
   {
     var str = "";
-    var name = prompt('Введите имя:');
+    name = prompt('Введите имя:');
     if(name == "") throw new Exception;
     if(name == null) return;
     if(id =='phone_tab') str = 'Введите номер телефона:';
     else if(id == 'mail_tab') str = 'Введите адрес электронной почты:';
     else if(id == 'skype_tab') str = 'Введите логин:';
-    var phone = prompt(str);
+    phone = prompt(str);
     if(phone == "") throw new Exception;
     if(phone == null) return;
-    if(!isEmail) throw new Exception;
-
-    var table = document.getElementById(id).getElementsByTagName('tbody')[0];
-    /*var newRow = table.insertRow(-1);
-    var newCell = newRow.insertCell(0);
-    var newText = document.createTextNode(name);
-    newCell.appendChild(newText);
-    var newCell = newRow.insertCell(1);
-    var newText = document.createTextNode(phone);
-    newCell.appendChild(newText);*/
+     //if(isEmai(phone) == false) throw new Exception;
+    var message = encodeURIComponent(name);
+    //var message2 = encodeURIComponent(phone);
+    window.location.href = 'Script.php?message'+message;//+message2;
+    /*var table = document.getElementById(id).getElementsByTagName('tbody')[0];
 
     var row = document.createElement("tr");
     table.appendChild(row);
@@ -32,7 +30,7 @@ function Add(id)
     row.appendChild(td2);
 
     td1.innerHTML = name;
-    td2.innerHTML = phone;
+    td2.innerHTML = phone;*/
     alert('Абонент успешно добавлен');
   }
   catch(ex)
@@ -42,7 +40,7 @@ function Add(id)
  //var re = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
 }
 //-----------------------------------------------------
-function isEmail() {
+function isEmail(str) {
  var re = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
  if (re.test(str)) return true;
    else return false;
@@ -52,7 +50,7 @@ function Del()
 {
   try
   {
-    var name = prompt("Введите имя удаляемого абонента:")
+    var name = prompt("Введите имя удаляемого абонента:");
     alert('Абонент успешно удален');
   }
   catch(ex)
