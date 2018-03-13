@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+   <link rel="shortcut icon" href="ico/icon.ico" type="image/ico">
+
+  <meta charset="utf-8">
+     <link href="default.css" rel="stylesheet" type="text/css" />
+
+  <title>Справочник</title>
+ </head>
+<!--<tr><td> Меню входа (вся зеленая шапка) </td></tr>-->
+    <div id="menu">  
+		<ul>
+					<form method="post" action="">
+						<div>
+							<h5>Логин </h5>
+							<input type="text" class="text" maxlength="32" name="username" />
+							<h5> Пароль </h5>
+							<input type="password" class="text" maxlength="32" name="username" />
+							<p><input type="submit" class="button" value="Войти" /></p>
+						</div>
+					</form>
+		</ul>
+	</div>
+<!--<tr><td> Конец </td></tr>-->
+    
+    <div id="content">
+		<div id="primaryContentContainer">
+			<div id="primaryContent">
+	<div class="box">
+        
+<!--<tr><td> Кнопки добавить/удалить </td></tr>-->
+<ul>
+<button onclick="javascript:Add();">
+     <img src="ico/icPlus.png" height=15px width=15px></img> 
+     Добавить
+</button>
+
+<button onclick="phpscript:Del();">
+     <img src="ico/icMinus.png" height=15px width=15px></img> 
+     <?php
+     function Del()
+     {
+      $name = $_GET[message];
+      $connection = mysql_connect("localhost", "dim", "123456");
+      $db = mysql_select_db("myhost");
+      mysql_set_charset("utf8");
+      if(!$connection || !db)
+        {
+          exit(mysql_error());
+        }
+      mysql_query("update Person set deleted='del' where name==$name");
+      mysql_close();
+     }
+     ?>
+     Удалить
+</button>
+
+</ul>
+					<div class="boxContent"> <!--<tr><td> Бокс между кнопками и таблицей </td></tr>-->
+						<table>
+							<tr>
+ <form>
+
+   <table id="phone_tab" class="sortable">
+
+     <thead>
+      <tr>
+        <th width=350>
+          Имя
+        </th>
+        <th>
+          Телефон
+        </th>
+      </tr>
+    </thead>
+
+       <tbody>
+         <?php
+         $connection = mysql_connect("localhost", "dim", "123456");
+         $db = mysql_select_db("myhost");
+         mysql_set_charset("utf8");
+         if(!$connection || !db)
+         {
+           exit(mysql_error());
+         }
+         $result = mysql_query("select name, phone, adress from Person");
+         mysql_close();
+         while($row = mysql_fetch_array($result))
+         {?>
+          <tr>
+            <td>
+              <?php echo $row['name'];?>
+            </td>
+            <td>
+              <?php echo $row['phone'];?>
+            </td>
+          </tr>
+         <?php }?>
+     </tbody>
+
+     <!--<tr><td width=350>данные</td><td>данные</td></tr>-->
+  <style type="text/css">
+    table {
+      border: 3px solid black; 
+      width: 600px ;
+    }
+    th {
+      border: 3px solid black;
+    }
+    td {
+      border: 2px solid black;
+    }
+     table {
+      border-collapse: collapse;
+    }
+  </style>
+
+</table>
+
+<hr />
+
+</form>
+<script type="text/javascript" src="script/Script.js"></script>
+ </body>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+          <!--<tr><td> Контейнер оглавление с гиперссылкой </td></tr>-->
+		<div id="secondaryContent">
+        <h1><a href="#">Справочник</a></h1>
+		<h2>лучший в мире</h2>
+			  <!--<tr><td> Контейнер поиска с ограничением в 20 </td></tr>-->
+            <div class="box boxB">
+				<div class="boxContent">
+					<form method="post" action="">
+						<div>
+                            <a href="#">Введите имя:</a>
+							<input type="text" class="text" maxlength="20" name="keywords" />
+							<input type="submit" class="button" value="Поиск" />
+							
+						</div>
+					</form>
+				</div>
+			</div>
+     <!--<tr><td> Боковой список где # это место для ссылки на данный пункт</td></tr>-->
+			<div class="box">
+				<h3>Список</h3>
+				<div class="boxContent">
+					<ul>
+						<li><a href="#">Мобильный номер</a></li>
+						<li><a href="#">Skype</a></li>
+						<li><a href="#">почта</a></li>
+					</ul>
+				</div>
+			</div>
+            
+		</div>
+		<div class="clear"></div>
+	</div>
+  
+<!--<tr><td> Нижний колантитул </td></tr>-->
+<div id="footer">
+		<p>Создали  <a href="https://github.com/V-Dmitry/Web-project" rel="nofollow">ГИТ</a></p>
+</div>
+<!--<tr><td> Картинка фона</td></tr>-->
+  <body background="image/fon.jpg"> 
+</html>

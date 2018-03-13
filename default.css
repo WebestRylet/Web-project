@@ -1,0 +1,186 @@
+/*  */
+*
+{
+	margin: 0em;
+	padding: 0em;
+}
+
+h1,h2,h3,h4,h5,h6
+/* цвет текста */
+{
+	color: #111;
+}
+/* общий маштаб */
+body,input
+{
+	font-family: tahoma, sans-serif;
+	font-size: 10pt;
+	color: #777;
+}
+
+input.button
+{
+	border-top: solid 1px #fff;
+	border-left: solid 1px #fff;
+	border-bottom: solid 1px #888;
+	border-right: solid 1px #888;
+	background-color: #eaeaea;
+	color: #555;
+	font-size: 0.8em;
+	padding: 0.35em;
+}
+
+input.text
+{
+	border-top: solid 1px #888;
+	border-left: solid 1px #888;
+	border-bottom: solid 1px #fff;
+	border-right: solid 1px #fff;
+	padding: 0.1em;
+	margin-top: 0.25em;
+	margin-bottom: 0.5em;
+}
+/* цвет гиперсылок */
+a
+{
+	color: #006699;
+	text-decoration: underline;
+}
+/* Menu */
+#menu
+{
+	position: absolute;
+	top: -6.5px;
+	left: 0px;
+	background-color: #558800;
+	border-bottom: solid 1px #336600;
+	width: 100%;
+}
+
+#menu ul
+{
+	padding: 1em 4.5em 1em 4.5em;
+	list-style: none;
+}
+
+/* Общий контейнер со всей информацией */
+
+#content
+{
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.box
+{
+	margin-bottom: .25em;
+}
+
+.boxContent
+{
+	margin-top: 0.5em;
+	padding: 1.25em 1em 0.25em 1em;
+	background: #ffffff url('images/a1.gif') top left repeat-x;
+}
+
+
+
+/** boxB **/
+
+.boxB .boxContent
+{
+	margin-top: 0em;
+	color: #fff;
+	border-bottom: solid 1px #004466;
+	background: #007799;
+	padding: 1em 1.5em 1em 1em;
+}
+
+.boxB a
+{
+	background-color: inherit;
+	color: #fff;
+	font-size: 0.8em;
+}
+
+.boxB input.text
+{
+	width: 100%;
+}
+
+/** Управление  размерностью**/
+
+#content h3
+{
+	font-size: 1.0em;
+}
+
+#content h2
+{
+	font-size: 1.25em;
+}
+
+#content ul
+{
+	margin-bottom: 1em;
+	padding-left: 1em;
+	line-height: 1.8em;
+}
+
+#content table th
+{
+	text-align: left;
+	font-weight: bold;
+	padding: 0.5em;
+	color: #111;
+}
+
+#content table td
+{
+	padding: 0.5em;
+}
+
+#content table tr.rowA
+{
+	background-color: #efefef;
+	color: inherit;
+}
+
+
+/* Primary Content */
+
+#primaryContentContainer
+{
+	float: right;
+	margin-left: -19em;
+	width: 100%;
+}
+
+#primaryContent
+{
+	margin: 0em 0em 0em 15em;
+	padding: 12.5em 2.5em 1.5em 2.5em;
+}
+
+/* Бокс регулирующ поисковик */
+
+#secondaryContent
+{
+	float: left;
+	width: 13em;
+	padding: 10.5em 2.5em 1.5em 2.5em;
+}
+
+/* Footer */
+
+#footer
+{
+	border-top: solid 1px #e5e5e5;
+	text-align: center;
+	padding: 1.5em 0em 1.5em 0em;
+}
+/* нижния полоса */
+.clear
+{
+	clear: both;
+}
