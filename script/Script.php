@@ -1,4 +1,5 @@
 <?php
+function DelReq($name){
   $name = $_GET[message];
 
       $connection = mysql_connect("localhost", "dim", "123456");
@@ -11,7 +12,8 @@
           exit(mysql_error());
         }
 
-      mysql_query("update Person set deleted='del' where name==$name");
-      
+      mysql_query("delete from Person where name=$name");
+
       mysql_close();
+    }
 ?>

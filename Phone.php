@@ -20,23 +20,8 @@
      Добавить
    </button>
 
-   <button onclick="phpscript:Del();">
+   <button onclick="phpscript:DelReq(javascript:Del());">
      <img src="ico/icMinus.png" height=15px width=15px></img>
-     <?php
-     function Del()
-     {
-      $name = $_GET[message];
-      $connection = mysql_connect("localhost", "dim", "123456");
-      $db = mysql_select_db("myhost");
-      mysql_set_charset("utf8");
-      if(!$connection || !db)
-        {
-          exit(mysql_error());
-        }
-      mysql_query("update Person set deleted='del' where name==$name");
-      mysql_close();
-     }
-     ?>
      Удалить
    </button>
 
@@ -52,6 +37,9 @@
         <th>
           Телефон
         </th>
+         <th>
+          Домашний адрес
+        </th>
       </tr>
     </thead>
 
@@ -66,7 +54,7 @@
          }
          $result = mysql_query("select name, phone, adress from Person");
          mysql_close();
-         while($row = mysql_fetch_array($result))
+         while($row = mysql_fetch_assoc($result))
          {?>
           <tr>
             <td>
@@ -74,6 +62,9 @@
             </td>
             <td>
               <?php echo $row['phone'];?>
+            </td>
+            <td>
+              <?php echo $row['adress'];?>
             </td>
           </tr>
          <?php }?>
@@ -83,7 +74,7 @@
   <style type="text/css">
     table {
       border: 3px solid black; 
-      width: 600px ;
+      width: 900px ;  
     }
     th {
       border: 3px solid black;
