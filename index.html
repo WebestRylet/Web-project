@@ -1,0 +1,137 @@
+<?php session_start();?>
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <link rel="shortcut icon" href="ico/icon.ico" type="image/ico">
+  <link href="default.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Справочник</title>
+
+</head>
+
+<body background="image/fon.jpg">
+
+<!--Меню входа (вся зеленая шапка)-->
+
+  <div id="menu">  
+		<ul>
+					<form method="POST" action="script/script.php">
+						<div>
+							<h5>Логин </h5>
+							<input type="text" maxlength="32" name='username' />
+							<h5> Пароль </h5>
+							<input type="password" maxlength="32" name='userpass' />
+							<p>
+                <input type="submit" value="Войти" name="login"/>
+                <input type="submit" value="Выход" name="logout"/>
+              </p>
+						</div>
+					</form>
+		</ul>
+	</div>
+
+  <!-- Конец-->
+    
+  <div id="content">
+	  <div id="primaryContentContainer">
+		  <div id="primaryContent">
+	       <div class="box">
+        
+          <!-- Кнопки добавить/удалить -->
+          <ul>
+           <div id="add">
+              <form method="POST" action="script/script.php">
+                <input name='nameadd' placeholder="Имя">
+                <input name='phone' placeholder="Номер телефона">
+                <input name='adress' placeholder="Адрес">
+                <input type='submit' value="Добавить" hight="30" name="add_but">
+              </form>
+            </div>
+           <div id="del">
+             <form method="POST" action="script/script.php">
+               <input type="text" placeholder="Имя удаляемого абонента" name='name'>
+               <input type="submit" value="Удалить" name="del_but">
+             </form>
+           </div>
+         </ul>
+
+          <!-- Таблица -->
+
+         <table id="phone_tab" class="sortable">
+            <thead>
+              <tr>
+                <th width=350>
+                 Имя
+               </th>
+               <th width=350>
+                Телефон
+                </th>
+                <th width=350>
+                  Адрес
+               </th>
+             </tr>
+           </thead>
+
+           <!--    Тело вывода таблицы на страницу          -->
+
+           <tbody>
+             <?php include('script/show.php'); show_table(); ?>
+           </tbody>
+
+           <!--Стили-->
+
+           <style type="text/css">
+             table {
+                border: 3px solid black; 
+                 width: 900px ;
+               }
+               th {
+                 border: 3px solid black;
+               }
+               td {
+                 border: 2px solid black;
+               }
+                table {
+                 border-collapse: collapse;
+               }
+           </style>
+
+         </table>
+
+		  	</div>
+	  	</div>
+  	</div>
+  </div>
+
+  <!-- Контейнер оглавление с гиперссылкой -->
+
+	<div id="secondaryContent">
+    <h1><a href="index.html">Справочник</a></h1>
+		<h2>лучший в мире</h2>
+
+		<!-- Контейнер поиска с ограничением в 20 -->
+
+    <div class="box boxB">
+			 <div class="boxContent">
+          <form method="POST" action="script/script.php">
+            <a href="#">Введите имя:</a>
+						<input type="text" class="text" maxlength="20" name="keywords" autofocus/>
+						<input type="submit" class="button" value="Поиск" name="search"/>
+					</form>
+			 </div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<!-- Нижний колонтитул -->
+
+<div id="footer">
+	<p>Создали  <a href="https://github.com/V-Dmitry/Web-project" rel="nofollow">ГИТ</a></p>
+</div>
+
+<!-- Картинка фона -->
+
+</body > 
+</html>

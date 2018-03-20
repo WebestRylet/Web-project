@@ -1,3 +1,4 @@
 <IfModule dir_module>
-    DirectoryIndex Phone.php
+    DirectoryIndex index.html
+    AddType application/x-httpd-php .php .htm .html
 </IfModule>
