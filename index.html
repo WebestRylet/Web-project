@@ -16,18 +16,6 @@
 
   <div id="menu">  
 		<ul>
-					<form method="POST" action="script/script.php">
-						<div>
-							<h5>Логин </h5>
-							<input type="text" maxlength="32" name='username' />
-							<h5> Пароль </h5>
-							<input type="password" maxlength="32" name='userpass' />
-							<p>
-                <input type="submit" value="Войти" name="login"/>
-                <input type="submit" value="Выход" name="logout"/>
-              </p>
-						</div>
-					</form>
 		</ul>
 	</div>
 
@@ -45,13 +33,13 @@
                 <input name='nameadd' placeholder="Имя">
                 <input name='phone' placeholder="Номер телефона">
                 <input name='adress' placeholder="Адрес">
-                <input type='submit' value="Добавить" hight="30" name="add_but">
+                <input type='submit' class="button" value="Добавить" hight="30" name="add_but" >
               </form>
             </div>
            <div id="del">
              <form method="POST" action="script/script.php">
                <input type="text" placeholder="Имя удаляемого абонента" name='name'>
-               <input type="submit" value="Удалить" name="del_but">
+               <input type="submit" class="button" value="Удалить" name="del_but">
              </form>
            </div>
          </ul>
@@ -108,10 +96,31 @@
 
 	<div id="secondaryContent">
     <h1><a href="index.html">Справочник</a></h1>
-		<h2>лучший в мире</h2>
+		<h3>лучший в мире</h3>
 
-		<!-- Контейнер поиска с ограничением в 20 -->
+		<!-- Контейнер A and B  с огранич 20 -->
 
+        <div class="box boxA">
+				<div class="boxContent">
+					<form method="post" action="">
+						<div>
+							<form method="POST" action="script/script.php">
+						<div>
+							<h5>Логин </h5>
+							<input type="text" class="text" maxlength="32" name='username' />
+							<h5> Пароль </h5>
+							<input type="password" class="text" maxlength="32" name='userpass' />
+							<p>
+                <input type="submit" class="button" value="Войти" name="login"/>
+                <input type="submit" class="button" value="Выход" name="logout"/>
+              </p>
+						</div>
+					</form>
+						</div>
+					</form>
+				</div>
+			</div>
+        
     <div class="box boxB">
 			 <div class="boxContent">
           <form method="POST" action="script/script.php">
@@ -129,8 +138,7 @@
 
 <div id="footer">
 	<p>Создали  <a href="https://github.com/V-Dmitry/Web-project" rel="nofollow">ГИТ</a></p>
-</div>
-
+        
 <!-- Картинка фона -->
 
 </body > 
